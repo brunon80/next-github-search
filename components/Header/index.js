@@ -39,7 +39,7 @@ function Header({ isAuthenticated }) {
             </Link>
             {
                 isAuthenticated && (
-                    <div className="flex flex-col">
+                    <div className="flex flex-col mr-4">
                         <div className="flex items-center">
                             <Link href="/profile" className="text-xl mr-4"><a className="text-xl">{user.name}</a></Link>
                             <img className="rounded-full ml-4" width={40} src={user.avatar_url} alt="" />
