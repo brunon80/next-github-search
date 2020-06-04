@@ -28,7 +28,7 @@ export default function Profile({ isAuthenticated }) {
             const access_token = localStorage.getItem('access_token')
             fecthAuthUserData(access_token).then(({ data }) => {
                 setUser(data)
-                fecthUserRepos(data.login).then(({ data: r }) => setRepos(r))
+                fecthUserRepos(data.login, access_token).then(({ data: r }) => setRepos(r))
             })
             fecthUserEmails(access_token).then(({ data }) => setUserEmails(data))
         }
@@ -52,8 +52,12 @@ export default function Profile({ isAuthenticated }) {
             },
         })
     }
-    async function fecthUserRepos(login) {
-        return axios.get(`https://api.github.com/users/${login}/repos`)
+    async function fecthUserRepos(login, access_token) {
+        return axios.get(`https://api.github.com/users/${login}/repos`, {
+            headers: {
+                Authorization: `token ${access_token}`,
+            },
+        })
     }
     // console.log(repos)
     return (

@@ -20,9 +20,9 @@ function Profile({ user, userEmails, repos }) {
                             !!userEmails.length && <h3 className="pt-10 text-center text-xl xl:text-left md:text-center">Private Emails</h3>
                         }
                         <ul>
-                            {userEmails.map((e) => <li className="pb-10 text-center xl:text-left md:text-center" key={e.email}>{e.email}</li>)}
+                            {userEmails.map((e) => <li className="text-center xl:text-left md:text-center" key={e.email}>{e.email}</li>)}
                         </ul>
-                        <div className="text-center xl:text-left md:text-center sm:text-center">
+                        <div className="text-center xl:text-left md:text-center sm:text-center pt-4">
                             <a className="text-black-500 font-bold" rel="noreferrer" target="_blank" href={user.html_url}>Visitar o perfil no Github</a>
                         </div>
                     </div>
