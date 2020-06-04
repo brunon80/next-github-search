@@ -41,7 +41,7 @@ function Header({ isAuthenticated }) {
                 isAuthenticated && (
                     <div className="flex flex-col">
                         <div className="flex items-center justify-between">
-                            <Link href="/profile" className="text-xl mr-4"><a className="text-xl">{user.name}</a></Link>
+                            <Link href="/profile"><a className="text-xl">{user.name}</a></Link>
                             <img className="rounded-full ml-5" width={40} src={user.avatar_url} alt="" />
                         </div>
                         <button className="self-start rounded px-5 bg-gray-700 text-white" type="button" onClick={logout}>Sair</button>

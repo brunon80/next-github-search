@@ -1,12 +1,19 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react'
 
 export default function Home({ isAuthenticated }) {
     const [username, setUsername] = useState('')
+    const { push } = useRouter()
+
+    useEffect(() => {
+        console.log(isAuthenticated)
+    }, [isAuthenticated])
 
     function onSubmit(e) {
         e.preventDefault()
         console.log(username)
+        push(`/profile?username=${username}`)
     }
     return (
         <div className="container mx-auto">

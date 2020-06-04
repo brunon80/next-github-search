@@ -5,7 +5,9 @@ import '../styles/index.css'
 export default function Root({ Component, pageProps }) {
     const [isAuthenticated, setAuth] = useState(false)
     useEffect(() => {
-        if (localStorage.access_token) setAuth(true)
+        setTimeout(() => {
+            if (localStorage.access_token) setAuth(true)
+        }, 100)
     }, [])
     return (
         <div>
