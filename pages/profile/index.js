@@ -10,19 +10,21 @@ import Description from '../../components/Description'
 import Avatar from '../../components/Avatar'
 import Repositories from '../../components/Repositories'
 
-export default function Profile() {
+export default function Profile({isAuthenticated }) {
     const [user, setUser] = useState({})
     const [repos, setRepos] = useState([])
     const [userEmails, setUserEmails] = useState([])
 
     useEffect(() => {
-        const access_token = localStorage.getItem('access_token')
-        fecthUserData(access_token).then(({ data }) => {
-            setUser(data)
-            fecthUserRepos(access_token, data.login).then(({ data: r }) => setRepos(r))
-        })
-        fecthUserEmails(access_token).then(({ data }) => setUserEmails(data))
-    }, [])
+        if (isAuthenticated) {
+            const access_token = localStorage.getItem('access_token')
+            fecthUserData(access_token).then(({ data }) => {
+                setUser(data)
+                fecthUserRepos(access_token, data.login).then(({ data: r }) => setRepos(r))
+            })
+            fecthUserEmails(access_token).then(({ data }) => setUserEmails(data))
+        }
+    }, [isAuthenticated])
 
     async function fecthUserData(access_token) {
         return axios.get('https://api.github.com/user', {

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useState } from 'react'
 
-export default function Home() {
+export default function Home({ isAuthenticated }) {
     const [username, setUsername] = useState('')
 
     function onSubmit(e) {
@@ -28,9 +28,14 @@ export default function Home() {
                     />
                     <div className="flex items-center mt-8 justify-center flex-col md:flex-row xl:flex-row lg:flex-row sm:flex-col">
                         <button className="rounded p-3 px-8 bg-gray-700 text-white m-5" type="submit">Search on Github</button>
-                        <a className="rounded p-3 px-8 bg-gray-700 text-white" href="https://github.com/login/oauth/authorize?scope=user:email&client_id=109ecf07022e6ce12f4e">
-                            Login with Github
-                        </a>
+                        {
+                            !isAuthenticated
+                        && (
+                            <a className="rounded p-3 px-8 bg-gray-700 text-white" href="https://github.com/login/oauth/authorize?scope=user:email&client_id=109ecf07022e6ce12f4e">
+                                Login with Github
+                            </a>
+                        )
+                        }
                     </div>
                 </form>
             </div>

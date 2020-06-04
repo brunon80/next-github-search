@@ -1,11 +1,16 @@
-import '../styles/index.css'
+import { useState, useEffect } from 'react'
 import Header from '../components/Header'
+import '../styles/index.css'
 
-export default function MyApp({ Component, pageProps }) {
+export default function Root({ Component, pageProps }) {
+    const [isAuthenticated, setAuth] = useState(false)
+    useEffect(() => {
+        if (localStorage.access_token) setAuth(true)
+    }, [])
     return (
         <div>
-            <Header />
-            <Component {...pageProps} />
+            <Header isAuthenticated={isAuthenticated} />
+            <Component isAuthenticated={isAuthenticated} {...pageProps} />
         </div>
     )
 }
