@@ -7,7 +7,7 @@ import Repositories from '../Repositories'
 
 function Profile({ user, userEmails, repos }) {
     return (
-        <div className="container mx-auto my-12">
+        <div className="container mx-auto my-12 p-5">
             <div className="flex flex-col mb-4 xl:flex-row">
                 <div className="xl:w-1/4 lg:w-full md:w-full sm:w-full">
                     <div className="p-10 bg-white rounded-lg shadow">
@@ -27,7 +27,7 @@ function Profile({ user, userEmails, repos }) {
                         </div>
                     </div>
                 </div>
-                <div className="xl:w-1/4 lg:w-full md:w-full sm:w-full flex-1 w-1/2 px-0 bg-gray-100 mt-5 sm:px-0 md:px-0 lg:px-0 xl:px-10 sm:mt-5 xl:mt-0 sm:mt-5 lg:mt-5 md:mt-5">
+                <div className="w-full xl:w-1/4 lg:w-full md:w-full sm:w-full flex-1 w-1/2 px-0 bg-gray-100 mt-5 sm:px-0 md:px-0 lg:px-0 xl:px-10 sm:mt-5 xl:mt-0 sm:mt-5 lg:mt-5 md:mt-5">
                     <div className="grid flex-wrap xl:grid-cols-2 md:grid-cols-2 gap-4">
                         {
                             repos.map((rep) => (
