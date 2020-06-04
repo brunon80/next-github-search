@@ -7,8 +7,9 @@ import { useRouter } from 'next/router'
 function Header() {
     const { pathname } = useRouter()
     console.log(pathname)
+
     return (
-        <div className="p-2 bg-gray-300 flex justify-between items-center">
+        <div className="p-2 flex justify-between items-center">
             <Link href="/">
                 <div className="flex align-middle items-center cursor-pointer">
                     <img className="ml-4" width={50} src="https://i.pinimg.com/originals/b1/5e/ed/b15eedbdafbbdbca3249e3942f4faf3b.png" alt="github logo" />

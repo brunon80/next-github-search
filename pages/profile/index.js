@@ -48,28 +48,29 @@ export default function Profile() {
     // console.log(repos)
     return (
         <Protected>
-            <div className="container mx-auto my-24">
+            <div className="container mx-auto my-12">
                 <Head>
                     <title>{`${user.name} profile`}</title>
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <div className="flex flex-col mb-4 xl:flex-row">
-                    <div className="p-10 bg-white rounded-lg shadow">
-                        {
-                            user.avatar_url && <Avatar url={user.avatar_url} />
-                        }
-                        <Title text={user.name} />
-                        <Description text={user.bio} />
-                        <h3 className="pt-10 text-center text-xl xl:text-left md:text-center">Private Emails</h3>
-                        <ul>
-                            {userEmails.map((e) => <li className="pb-10 text-center xl:text-left md:text-center" key={e.email}>{e.email}</li>)}
-                        </ul>
-                        <div className="text-center xl:text-left md:text-center sm:text-center">
-                            <a className="text-black-500 font-bold" rel="noreferrer" target="_blank" href={user.html_url}>Visitar o perfil no Github</a>
+                    <div>
+                        <div className="p-10 bg-white rounded-lg shadow">
+                            {
+                                user.avatar_url && <Avatar url={user.avatar_url} />
+                            }
+                            <Title text={user.name} />
+                            <Description text={user.bio} />
+                            <h3 className="pt-10 text-center text-xl xl:text-left md:text-center">Private Emails</h3>
+                            <ul>
+                                {userEmails.map((e) => <li className="pb-10 text-center xl:text-left md:text-center" key={e.email}>{e.email}</li>)}
+                            </ul>
+                            <div className="text-center xl:text-left md:text-center sm:text-center">
+                                <a className="text-black-500 font-bold" rel="noreferrer" target="_blank" href={user.html_url}>Visitar o perfil no Github</a>
+                            </div>
                         </div>
                     </div>
-                    <div className="p-10 bg-gray-100">
-                        <h2 className="pb-10 text-3xl">Repositórios</h2>
+                    <div className="px-0 bg-gray-100 mt-5 sm:px-0 md:px-0 lg:px-0 xl:px-10 sm:mt-5 xl:mt-0 sm:mt-5 lg:mt-5 md:mt-5">
                         <div className="grid flex-wrap xl:grid-cols-2 md:grid-cols-2 gap-4">
                             {
                                 repos.map((rep) => (
