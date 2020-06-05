@@ -13,7 +13,7 @@ export default function Home({ isAuthenticated }) {
     function onSubmit(e) {
         e.preventDefault()
         console.log(username)
-        push(`/profile?username=${username}`)
+        if (username) push(`/profile?username=${username}`)
     }
     return (
         <div className="container mx-auto">
@@ -27,6 +27,7 @@ export default function Home({ isAuthenticated }) {
             <div className="flex items-center justify-center">
                 <form onSubmit={onSubmit} className="xl:w-1/2 mt-4 md:w-3/4 lg:w-3/5 w-5/6">
                     <input
+                        required
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         placeholder="Type a github username, eg. brunon80"
