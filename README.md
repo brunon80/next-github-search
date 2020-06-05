@@ -1,9 +1,19 @@
 This is a [Next.js](https://nextjs.org/) project.
 
 # Github Profile Search
+<div style="display: flex;" >
+    <img style="padding: 10px;" width="50%" src="https://i.imgur.com/iqsCOJh.png" >
+    <img style="padding: 10px;" width="50%" src="https://i.imgur.com/NBDRNxT.png" >
+</div>
+
+
 - Search a profile with repos by username
 - Login with github
-- Built with Nextjs - React Framework
+
+# Built with (Construído com)
+- Nextjs
+- React
+- Tailwind CSS
 
 ## Run the development server:
 
