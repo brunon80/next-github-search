@@ -22,5 +22,5 @@ npm run dev
 # or
 yarn dev
 ```
-## You can find a live version here
+## You can find a online version here (Aqui você encontra um versão online)
 https://next-github-search.now.sh/
