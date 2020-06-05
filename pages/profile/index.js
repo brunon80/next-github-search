@@ -53,10 +53,10 @@ export default function Profile({ isAuthenticated }) {
         })
     }
     async function fecthUserRepos(login, access_token) {
+        const headers = {}
+        if (access_token) headers.Authorization = `token ${access_token}`
         return axios.get(`https://api.github.com/users/${login}/repos`, {
-            headers: {
-                Authorization: `token ${access_token}`,
-            },
+            headers,
         })
     }
     // console.log(repos)
